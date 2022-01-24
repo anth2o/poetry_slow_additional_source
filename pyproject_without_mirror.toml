@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "poetry_slow_additional_source"
+version = "0.1.0"
+description = ""
+authors = ["Antoine Hoorelbeke <antoine.hoorelbeke@heuritech.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "^1.22.1"
+typer = "^0.4.0"
+tqdm = "^4.62.3"
+fastapi = "^0.73.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

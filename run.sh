@@ -1,0 +1,18 @@
+set -e
+
+rm -r venv || true
+virtualenv -p python3 venv
+source venv/bin/activate
+
+rm poetry.lock || true
+cp pyproject_without_mirror.toml pyproject.toml
+echo "Without mirror"
+poetry lock -vvv
+
+rm poetry.lock
+cp pyproject_with_mirror.toml pyproject.toml
+echo "With mirror"
+poetry lock -vvv 
+
+rm poetry.lock
+rm pyproject.toml
