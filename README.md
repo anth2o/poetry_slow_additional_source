@@ -6,7 +6,8 @@ To test this, you should have `python3.8`, [`poetry`](https://python-poetry.org/
 ```
 
 I have the following results:
-- lock without mirror: 2.8s
-- lock with mirror: 15.2s
+- lock without mirror: ~2s
+- lock with secondary mirror: ~30s
+- lock with default mirror: >60s (I didn't wait until completion)
 
-This is weird that the installation with a mirror setup is 5x slower. Indeed, I set this source as secondary as described [here](https://python-poetry.org/docs/repositories/#install-dependencies-from-a-private-repository) in order to use Pypi as the primary source.
+This is weird that the installation with a mirror setup is 15x slower. Indeed, I set this source as secondary as described [here](https://python-poetry.org/docs/repositories/#install-dependencies-from-a-private-repository) in order to use Pypi as the primary source.
