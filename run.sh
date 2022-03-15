@@ -7,12 +7,17 @@ source venv/bin/activate
 rm poetry.lock || true
 cp pyproject_without_mirror.toml pyproject.toml
 echo "Without mirror"
-poetry lock -vvv
+poetry lock 
 
 rm poetry.lock
-cp pyproject_with_mirror.toml pyproject.toml
-echo "With mirror"
-poetry lock -vvv 
+cp pyproject_with_default_mirror.toml pyproject.toml
+echo "With default mirror"
+poetry lock
+
+rm poetry.lock
+cp pyproject_with_secondary_mirror.toml pyproject.toml
+echo "With secondary mirror"
+poetry lock
 
 rm poetry.lock
 rm pyproject.toml
